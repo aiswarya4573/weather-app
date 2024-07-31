@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::placeholder{
+    color:  #508991;
+    background-color: #826C7F40;
+    
+}
+body{
+    height: 593px;
+}
+.weather-outer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 593px;
+}
+.weather-app-container{
+ 
+    padding: 25px 27px 82px 27px;
+    gap: 0px;
+    border-radius: 12px ;
+    opacity: 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    width:493px;
+    height: 308px;
+}
+
+h2{
+    color:#004346;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28.8px;
+    
+}
+.search-icon button{
+    background-color:#004346;
+    padding: 7px 10px;
+
+    
+}
+.search-bar{
+    width: 391px;
+    height: 39px;
+    background-color: #826C7F40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #004346;
+    ;
+
+}
+.search-bar form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+}
+.search-bar input{
+    border: none;
+    margin-left: 155px;
+    
+}
+.hr-text {
+    border: 0;
+    font-size: 14px;
+    height: 1.5em;
+    line-height: 1em;
+    position: relative;
+    text-align: center;
+  }
+  .inner-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .horizontal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 14px;
+  }
+  .location-btn{
+    width: 390px;
+    background-color:#508991;
+    color: white;
+    border: none;
+    padding: 11px 51px 11px 51px;
+    
+
+  }
+  .second-weather{
+    color: white;
+  }
+  .weather-app-container-two{
+ 
+    padding: 25px 27px 82px 27px;
+    gap: 0px;
+    border-radius: 12px ;
+    opacity: 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    width:493px;
+    height: 490px;
+    background-color:#172A3A;
+    
+}
+.inner-content-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+.box{
+    background-color: #508991;
+    
+}
+.bottom-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
