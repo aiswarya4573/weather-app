@@ -78,7 +78,7 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.3rem;
   }
   .horizontal{
     display: flex;
@@ -103,7 +103,8 @@ h2{
  
     padding: 25px 27px 82px 27px;
     gap: 0px;
-    border-radius: 12px ;
+    border-top-right-radius: 12px ;
+    border-top-left-radius: 12px;
     opacity: 0px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
     width:493px;
@@ -118,15 +119,121 @@ h2{
     align-items: center;
     gap: 2rem;
   }
-.box{
+.box1{
     background-color: #508991;
+    width: 246px;
+    height: 69px;
+  
+    padding: 8px 51px 8px 51px;
+    
+    border: 0px 1px 0px 0px;
+    border-bottom-left-radius: 12px;
+    
+
+
+    
+}
+.box2{
+    background-color: #508991;
+    width: 246px;
+    height: 69px;
+  
+    padding: 8px 51px 8px 51px;
+    
+    border: 0px 1px 0px 0px;
+    
+    border-bottom-right-radius: 12px;
+
+
     
 }
 .bottom-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 0.1rem;
+    transform: translateY(-50px);
 }
+.weather{
+    color: white;
+}
+.inner-content-two span{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58.09px;
+    text-align: center;
+}
+.box1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.box-content p{
+    color: white;
+}
+.box-content-two p{
+    color: white;
+}
+#location-name{
+    color: white;
+   
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    text-align: center;
+
+}
+.location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.weather{
+  
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    text-align: center;
+
+}
+#text-box{
+    display: none;
+    width: 391px;
+    height: 39px;
+
+}
+#weather-name{
+    color: white;
+}
+.feels-like span{
+    color: white;
+}
+.feels-like{
+    display: flex;
+    gap: 0.5rem;
+}
+.humidity{
+    display: flex;
+    gap: 0.5rem;
+}
+.humidity span{
+    color: white;
+}
+
+
 
 
 

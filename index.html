@@ -14,12 +14,13 @@
             <div class="weather-app-container">
                 <div class="inner-content">
                     <h2>WEATHER APP</h2>
+                    <div id="text-box"></div>
                     <div class="search-bar">
-                        <form action="#">
+                        <form action="#" id="weather-form">
                             <input type="text" placeholder="Enter city name"
                                    name="search" id="search">
                             <div class="search-icon">
-                                <button type="submit"><img src="Vector.png"/></button>
+                                <button type="submit" id="search-btn"><img src="Vector.png"/></button>
 
                             </div>   
                          </form>
@@ -33,7 +34,7 @@
 
                      </div>
                      <div>
-                        <button type="button" class="location-btn">Use device location</button>
+                        <button type="button" class="location-btn" id="location-button">Use device location</button>
                      </div>
                 </div>
                 </div> 
@@ -45,5 +46,9 @@
             <img src="Group (1).png"/>
         </div>
     </div>
+
+
+
+    <script src="index.js"></script>
   </body>
 </html>
