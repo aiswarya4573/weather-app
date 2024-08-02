@@ -96,7 +96,11 @@ h2{
     
 
   }
-  .second-weather{
+  .location-btn:hover{
+    transition: 0.8s;
+    opacity: 0.8;
+  }
+    .second-weather{
     color: white;
   }
   .weather-app-container-two{
@@ -213,6 +217,27 @@ h2{
     display: none;
     width: 391px;
     height: 39px;
+    background: #D3DEDE;
+    text-align: center;
+    line-height: 38px;
+
+
+}
+#error-box{
+    display: none;
+    width: 391px;
+    height: 39px;
+    background-color:  #F4E7E1;
+    text-align: center;
+    line-height: 38px;
+    
+
+}
+#geolocation-box{
+    display: none;
+    width: 391px;
+    height: 39px;
+    background-color:  #F4E7E1;
 
 }
 #weather-name{
