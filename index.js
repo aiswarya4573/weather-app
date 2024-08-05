@@ -110,83 +110,66 @@ if (dat.name) {
     
 
 }
-let lon;
-let lat;
-let temperature = document.querySelector("#temperature");
-let summary = document.querySelector("#weather-name");
-let loc = document.querySelector("#location-name");
-let icon = document.querySelector("#weather-img");
-let humidity = document.getElementById('humidity-percentage');
-let feel = document.getElementById('feels-like');
 
+        const geoButton=document.querySelector("#location-button");
+        geoButton.addEventListener("click", async () => {
+            const loading= document.querySelector('#text-box');
+            loading.style.display='block';
+            const geolo= document.querySelector('#geolocation-box');
+            geolo.style.display='none';
 
-const kelvin = 273;
-const geoButton=document.querySelector("#location-button");
-    
-
-
-    geoButton.addEventListener('submit' , () => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition((position) => {
-            console.log(position);
-            lon = position.coords.longitude;
-            lat = position.coords.latitude;
-      
-            // API ID
-            const api = "92abe3f1ff575ca463dcecc3edf8d1eb";
-      
-            // API URL
-            const base =
-            `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` +
-            `lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`;
-      
-            // Calling the API
-            fetch(base)
-              .then((response) => {
-                return response.json();
-              })
-              .then((data) => {
-                console.log(data);
-                temperature.textContent = 
-                    Math.floor(data.main.temp - kelvin) + "°C";
-                summary.textContent = data.weather[0].description;
-                loc.textContent = data.name + "," + data.sys.country;
-                humidity.textContent=data.main.humidity;
-                feel=data.main.feels_like;
-                let icon1 = data.weather[0].icon;
-                icon.innerHTML = 
-                    `<img src="icons/${icon1}.svg" style= 'height:10rem'/>`;
-               
-
+            
+            try {
+              if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(async (position) => {
+                  const lat = position.coords.latitude;
+                  const lon = position.coords.longitude;
+                  const response = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=da570a6b2276bc62ca7aaac5747e1544&units=metric`
+                  );
+                  const data = await response.json();
+                  console.log(data);
+                  weatherData = data;
+                  
+        
+                  if (!response.ok) {
+                    Denied.style.display = "block";
+                    throw new Error();
+                  }
+                  const queryString = new URLSearchParams({
+                    name: data.name,
+                    temp: data.main.temp,
+                    feels_like: data.main.feels_like,
+                    description: data.weather[0].description,
+                    humidity: data.main.humidity,
+                    icon: data.weather[0].icon,
+                  }).toString();
+                 
+                 
+                  var delayInMilliseconds = 3000; //5 second
+                    
+                    setTimeout(function() {
+                        //your code to be executed after 5 second
+                        window.location.href = `weather.html?${queryString}`;
                 
+                        
+                        }, delayInMilliseconds);
 
-                
 
-              });
+
+                });
+                  
+            }else {
+                geolo.style.display = "block";
+              }
+            } catch (error) {
+              geolo.style.display = "block";
+            } finally {
+              loading.style.display = "block";
+            }
           });
-        }
-      });
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
+        
     
-
-
-
-
-
-
 
 
 
