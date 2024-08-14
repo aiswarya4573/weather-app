@@ -238,8 +238,12 @@ h2{
     width: 391px;
     height: 39px;
     background-color:  #F4E7E1;
-
+    text-align: center;
+    line-height: 39px;
 }
+
+
+
 #weather-name{
     color: white;
 }
@@ -258,6 +262,7 @@ h2{
     color: white;
 }
 
+    
 
 
 

@@ -114,12 +114,13 @@ if (dat.name) {
         const geoButton=document.querySelector("#location-button");
         geoButton.addEventListener("click", async () => {
             const loading= document.querySelector('#text-box');
-            loading.style.display='block';
-            const geolo= document.querySelector('#geolocation-box');
+            loading.style.display='none';
+            const geolo= document.querySelector("#geolocation-box");
             geolo.style.display='none';
 
             
             try {
+              
               if ("geolocation" in navigator) {
                 navigator.geolocation.getCurrentPosition(async (position) => {
                   const lat = position.coords.latitude;
@@ -129,13 +130,19 @@ if (dat.name) {
                   );
                   const data = await response.json();
                   console.log(data);
+                  loading.style.display='block';
                   weatherData = data;
+
+                  
                   
         
                   if (!response.ok) {
-                    Denied.style.display = "block";
+                    
+                    geolo.style.display = 'block';
                     throw new Error();
+                    
                   }
+                  
                   const queryString = new URLSearchParams({
                     name: data.name,
                     temp: data.main.temp,
@@ -159,16 +166,35 @@ if (dat.name) {
 
                 });
                   
-            }else {
+            }
+            
+            else {
                 geolo.style.display = "block";
               }
             } catch (error) {
               geolo.style.display = "block";
+              
             } finally {
               loading.style.display = "block";
             }
           });
         
+
+
+          allCookies = document.cookie;
+
+document.cookie = "name=oeschger; SameSite=None; domain=ecommerce.com; path=/; Secure";
+document.cookie = "favorite_food=tripe; SameSite=None; Secure";
+
+function showCookies() {
+  const output = document.getElementById("cookies");
+  output.textContent = `> ${document.cookie}`;
+}
+
+function clearOutputCookies() {
+  const output = document.getElementById("cookies");
+  output.textContent = "";
+}
     
 
 
